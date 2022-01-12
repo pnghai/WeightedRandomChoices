@@ -10,14 +10,14 @@ def _split(paddedSize)
   winningAddresses = [];
   # build address list
   // Loops the size of the number of tickets in the lottery
-  for (i = 0; i < sizeOfLottery; i++) do
+  for i in 0..(sizeOfLottery-1) do
     # 1. initialization
     populationSize = stakeholders.length() - i - paddedSize
     
     # cumullative total
     cummulatedSum = 0;
-    for k in 1..populationSize do
-      cummulatedSum += weightedAddresses[stakeholders[k-1]
+    for k in 0..(populationSize-1) do
+      cummulatedSum += weightedAddresses[stakeholders[k]
     end
     #Create arrays Alias and Prob, each of size n.
     _Alias = []
@@ -28,7 +28,7 @@ def _split(paddedSize)
       _Large = []
 
     #//Multiply each probability by n.
-    for k in 1..populationSize do
+    for k in 0..(populationSize-1) do
         p[k] = weightedAddresses[stakeholders[k]] * populationSize;
 
         #// For each scaled probability pi:
