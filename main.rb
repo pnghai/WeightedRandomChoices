@@ -61,7 +61,7 @@ def _split(paddedSize, winningSize, stakeholders,weightedAddresses)
       #// Set pg:=(pg+pl)−1. (This is a more numerically stable option.)
       p[g] = p[g] + p[l] - cummulatedSum
       
-      if (p[g]<1) then
+      if (p[g]<cummulatedSum) then
         _Small.push(g)
       else
         _Large.push(g)
